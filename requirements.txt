@@ -1,0 +1,4 @@
+ironpdf
+PIL
+cv2
+bs4 

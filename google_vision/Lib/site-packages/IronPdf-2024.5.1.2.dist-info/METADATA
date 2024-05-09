@@ -1,0 +1,122 @@
+Metadata-Version: 2.1
+Name: IronPdf
+Version: 2024.5.1.2
+Summary: IronPdf for Python
+Home-page: https://ironpdf.com/
+Author: Iron Software
+Author-email: developers@ironsoftware.com
+License: Commercial
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Adaptive Technologies
+Classifier: Topic :: Artistic Software
+Classifier: Topic :: Communications
+Classifier: Topic :: Database
+Classifier: Topic :: Desktop Environment
+Classifier: Topic :: Documentation
+Classifier: Topic :: Education
+Classifier: Topic :: File Formats
+Classifier: Topic :: Games/Entertainment
+Classifier: Topic :: Internet
+Classifier: Topic :: Multimedia
+Classifier: Topic :: Office/Business
+Classifier: Topic :: Printing
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Security
+Classifier: Topic :: Software Development
+Classifier: Topic :: System
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7, <4
+Description-Content-Type: text/markdown
+Requires-Dist: pythonnet
+
+![Pypi](https://img.shields.io/pypi/v/IronPdf?color=informational&label=latest) ![Installs](https://img.shields.io/pypi/dm/IronPdf?color=informational&label=installs&logo=pypi) ![Passed](https://img.shields.io/badge/build-%20%E2%9C%93%203158%20tests%20passed%20(0%20failed)%20-107C10?logo=visualstudio) ![windows](https://img.shields.io/badge/%E2%80%8E%20-%20%E2%9C%93-107C10?logo=windows) ![macOS](https://img.shields.io/badge/%E2%80%8E%20-%20%E2%9C%93-107C10?logo=apple) ![linux](https://img.shields.io/badge/%E2%80%8E%20-%20%E2%9C%93-107C10?logo=linux&logoColor=white) ![docker](https://img.shields.io/badge/%E2%80%8E%20-%20%E2%9C%93-107C10?logo=docker&logoColor=white) ![aws](https://img.shields.io/badge/%E2%80%8E%20-%20%E2%9C%93-107C10?logo=amazonaws) ![microsoftazure](https://img.shields.io/badge/%E2%80%8E%20-%20%E2%9C%93-107C10?logo=microsoftazure) [![livechat](https://img.shields.io/badge/Live%20Chat:-24/5-purple?logo=googlechat&logoColor=white)](https://ironpdf.com/python/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=topshield#helpscout-support)
+
+# IronPDF - Create, Edit, and Read PDFs in Python Applications
+
+[![IronPDF NuGet Trial Banner Image](https://raw.githubusercontent.com/iron-software/iron-nuget-assets/main/IronPDF-python-readme/nuget-trial-banner-large.png)](https://ironpdf.com/python/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=topbanner#trial-license)
+
+[Get Started](https://ironpdf.com/python/docs/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=navigation) | [Tutorials](https://ironpdf.com/python/tutorials/html-to-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=navigation) | [Code Examples](https://ironpdf.com/python/examples/using-html-to-create-a-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=navigation) | [Licensing](https://ironpdf.com/python/licensing/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=navigation) | [Free Trial](https://ironpdf.com/python/docs/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=navigation#trial-license)
+
+IronPDF is a library developed and maintained by Iron Software that helps Engineers to create, edit and extract PDF content in projects in Python.
+
+### IronPDF excels at: 
+ - Generating PDFs from: [HTML](https://ironpdf.com/python/examples/using-html-to-create-a-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist), [URL](https://ironpdf.com/python/examples/converting-a-url-to-a-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist), [JavaScript](https://ironpdf.com/python/examples/javascript-html-to-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist), [CSS](https://ironpdf.com/python/tutorials/html-to-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist) and many [image formats](https://ironpdf.com/python/examples/image-to-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist)
+ -  Adding [headers/footers](https://ironpdf.com/python/examples/headers-and-footers/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist), [signatures](https://ironpdf.com/python/examples/digitally-sign-a-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist), [attachments](https://ironpdf.com/python/examples/add-attachment-to-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist), and [passwords and security](https://ironpdf.com/python/examples/security-and-metadata/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist)
+ - Performance optimization: Full Multithreading and [Async](https://ironpdf.com/python/examples/async/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist) support
+ - And many more! Visit [our website](https://ironpdf.com/python/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist) to see all our [code examples](https://ironpdf.com/python/examples/using-html-to-create-a-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist) and a full list of our 50+ features
+
+### IronPDF has cross platform support compatibility with:
+- Python 3.7+
+- Windows, macOS, Linux, Docker, Azure, and AWS
+
+[![IronPDF Cross Platform Compatibility Support Image](https://raw.githubusercontent.com/iron-software/iron-nuget-assets/main/IronPDF-python-readme/cross-platform-compatibility.png)](https://ironpdf.com/python/docs/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=crossplatformbanner)
+
+Additionally, our API reference and [full licensing information](https://ironpdf.com/python/licensing/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist#trial-license) can easily be found on our website.
+
+## Using IronPDF
+
+IronPDF Python relies on .NET 6.0 as its underlying technology. Therefore, it is necessary to have the [.NET 6.0 runtime installed on your machine](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) in order to use IronPDF Python.
+
+Linux and Mac users may need to install .NET from https://dotnet.microsoft.com/en-us/download/dotnet/6.0 prior to using this Python package.
+
+### Install Using Pip
+
+```
+pip install ironpdf
+```
+IronPDF will then download additional dependencies the first time you run it.
+
+### Or Download the Full Package
+
+Optionally, download the Python package specific to your platform from our downloads section at https://ironpdf.com/python/
+
+### Usage
+
+Once installed, you can get started by adding `from IronPyPdf import *` to the top of your Python script. Here is a sample HTML to PDF example to get started:
+```
+# HTML to PDF
+from ironpdf import *
+renderer = ChromePdfRenderer()
+pdf = renderer.RenderHtmlAsPdf("<h1>Hello World</h1>")
+pdf.SaveAs("output.pdf")
+```
+And another option is to create from URL to PDF:
+```
+# URL to PDF
+from ironpdf import *
+renderer = ChromePdfRenderer()
+pdf = renderer.RenderUrlAsPdf("https://ironpdf.com/python/")
+pdf.SaveAs("output.pdf")
+```
+## Features Table
+[![IronPDF Features](https://raw.githubusercontent.com/iron-software/iron-nuget-assets/main/IronPDF-python-readme/features-table.png)](https://ironpdf.com/python/features/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featuresbanner)
+
+## Licensing & Support Available
+For our full list of code examples, tutorials, licensing information, and documentation visit: [https://ironpdf.com/python/](https://ironpdf.com/python/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=supportanddocs)
+
+For more support and inquiries, please email us at: support@ironsoftware.com
+
+## Documentation Links
+
+- Code Examples : [https://ironpdf.com/python/examples/](https://ironpdf.com/python/examples/using-html-to-create-a-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=featureslist)
+- Tutorials : [https://ironpdf.com/python/tutorials/](https://ironpdf.com/tutorials/html-to-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=supportanddocs)
+- Licensing : [https://ironpdf.com/python/licensing/](https://ironpdf.com/python/licensing/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=supportanddocs)
+- Live Chat Support : [https://ironpdf.com/python/#helpscout-support](https://ironpdf.com/python/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=supportanddocs#helpscout-support)
+
+<!--- -   How-To Guides : [https://ironpdf.com/python/how-to/](https://ironpdf.com/python/how-to/html-file-to-pdf/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=supportanddocs)
+-   API Reference : [https://ironpdf.com/python/object-reference/api/](https://ironpdf.com/python/object-reference/api/?utm_source=nuget&utm_medium=organic&utm_campaign=readme&utm_content=supportanddocs) --->
+
+
