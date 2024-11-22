@@ -1,1 +1,5 @@
-client_file.*
+client_file.json
+.vscode
+__pycache__
+station*
+*exits
