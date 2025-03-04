@@ -2,9 +2,6 @@ import io
 import os
 from google.cloud import vision
 
-
-
-
 def savestationdata(stationname, linescoordinates):
 
     file = open(os.getcwd()+"\\stationdata\\"+stationname+".txt",'w',encoding="utf-8")
@@ -14,7 +11,6 @@ def savestationdata(stationname, linescoordinates):
     file.close()
 
 def OCR():
-
     os.environ['GOOGLE_APPLICTION_CREDENTIALS'] = 'client_file.json'
     client = vision.ImageAnnotatorClient()
 
@@ -82,4 +78,4 @@ def OCR():
                 "https://cloud.google.com/apis/design/errors".format(response.error.message)
             )
         
-        savestationdata(imgfile[:-4],Lines)
+OCR()

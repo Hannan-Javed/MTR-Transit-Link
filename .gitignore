@@ -1,5 +1,10 @@
 client_file.json
 .vscode
-__pycache__
+*__pycache__
 station*
 *exits
+*Include*
+*Lib*
+*Scripts*
+*share
+*pyvenv.cfg
