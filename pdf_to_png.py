@@ -9,5 +9,4 @@ def convertToPNG():
     for filename in os.listdir(os.getcwd()+"\\stations"):
         print("Converting ",filename,"to png....")
         pdf = PdfDocument.FromFile(os.getcwd()+"\\stations\\"+filename)
-        pdf.RasterizeToImageFiles("stations_png/"+filename[:-4]+'.png',DPI=250)
-        
+        pdf.RasterizeToImageFiles("stations_png/"+filename[:-4]+'.png',DPI=1000)
