@@ -112,11 +112,21 @@ def determine_direction():
 
         image = Image.open(image_path)
         image = image.convert('RGB')
+        transformed_data = {}
         for line, coords in data.items():
             if len(coords) < 2:
                 continue  # Skip invalid entries
             # Determine train location
             train_location = look_for_train(image, coords)
+            # Sort the keys before placing them
+            sorted_train_location = {k: train_location[k] for k in sorted(train_location)}
+            transformed_data[line] = sorted_train_location
+
+        # Overwrite the file with transformed data
+        with open(station_path, 'w') as file:
+            json.dump(transformed_data, file, indent=4)
+
+        print(f"Processed {station}")
 
 if __name__ == "__main__":
     determine_direction()
