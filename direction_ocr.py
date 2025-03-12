@@ -106,20 +106,17 @@ def determine_direction():
         with open(station_path, 'r') as file:
             data = json.load(file)
 
-        image_path = f"stations_png2/{station.replace('.json', '.png')}"  # Assuming corresponding image files are in station_images
+        image_path = f"stations_png/{station.replace('.json', '.png')}"  # Assuming corresponding image files are in station_images
         if not os.path.exists(image_path):
             continue
 
         image = Image.open(image_path)
         image = image.convert('RGB')
-        
         for line, coords in data.items():
             if len(coords) < 2:
                 continue  # Skip invalid entries
-            
             # Determine train location
             train_location = look_for_train(image, coords)
-
 
 if __name__ == "__main__":
     determine_direction()
