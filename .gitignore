@@ -2,9 +2,12 @@ client_file.json
 .vscode
 *__pycache__
 station*
+!station_coords.py
 *exits
 *Include*
 *Lib*
 *Scripts*
 *share
+exits.log
 *pyvenv.cfg
+exits_data_json
