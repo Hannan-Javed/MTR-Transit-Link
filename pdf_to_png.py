@@ -2,7 +2,7 @@ from ironpdf import *
 import os
 
 
-def convertToPNG():
+def convertToPNG(dpi = 250):
 
     if not os.path.exists(os.getcwd() + "\\stations_png"):
         os.makedirs(os.getcwd() + "\\stations_png")
@@ -11,7 +11,7 @@ def convertToPNG():
         print("Converting ",filename,"to png....")
         try:
             pdf = PdfDocument.FromFile(os.getcwd()+"\\stations\\"+filename)
-            pdf.RasterizeToImageFiles("stations_png/"+filename[:-4]+'.png',DPI=1000)
+            pdf.RasterizeToImageFiles("stations_png/"+filename[:-4]+'.png',DPI=dpi)
         except:
             error_files.append(filename)
     
@@ -19,5 +19,3 @@ def convertToPNG():
         print("Error converting the following files:")
         for file in error_files:
             print(file)
-
-convertToPNG()
