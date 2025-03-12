@@ -116,12 +116,9 @@ def determine_direction():
         for line, coords in data.items():
             if len(coords) < 2:
                 continue  # Skip invalid entries
-            # Determine arrow direction
-
+            
             # Determine train location
             train_location = look_for_train(image, coords)
-            print(f"Train location for {line}: {train_location}")
-            input()  # Pause for debugging/visual inspection
 
 
 if __name__ == "__main__":
