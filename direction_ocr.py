@@ -127,6 +127,3 @@ def determine_direction():
             json.dump(transformed_data, file, indent=4)
 
         print(f"Processed {station}")
-
-if __name__ == "__main__":
-    determine_direction()
