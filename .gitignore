@@ -11,3 +11,4 @@ station*
 exits.log
 *pyvenv.cfg
 exits_data_json
+closest_compartments
