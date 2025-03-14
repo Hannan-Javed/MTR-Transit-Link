@@ -2,6 +2,7 @@ client_file.json
 .vscode
 *__pycache__
 station*
+!StationAdapter.kt
 !station_coords.py
 *exits
 *Include*
