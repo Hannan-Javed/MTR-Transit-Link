@@ -1,5 +1,9 @@
 package com.example.mtrtransitlink
 
+import android.graphics.Typeface
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +36,28 @@ class RouteAdapter(private val routes: List<StationRoute>) :
             val exitView = LayoutInflater.from(holder.itemView.context)
                 .inflate(R.layout.item_exit, holder.exitsContainer, false)
             val exitText: TextView = exitView.findViewById(R.id.exitText)
-            exitText.text = "Exit ${exit.name}: Please go to ${exit.direction} of the train."
+
+            // Create the base text
+            val baseText = "${exit.name}: Closest to ${exit.direction} of the train."
+
+            // Use substrings to construct the spannable string
+            val spannableString = SpannableString(baseText)
+
+            // Define the start and end indices of the exit name
+            val startIndexName = 0
+            val endIndexName = startIndexName + exit.name.length
+
+            // Define the start and end indices of the exit direction
+            val startIndexDirection = baseText.indexOf(exit.direction)
+            val endIndexDirection = startIndexDirection + exit.direction.length
+
+            // Apply the bold style for the exit name
+            spannableString.setSpan(StyleSpan(Typeface.BOLD), startIndexName, endIndexName, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+            // Apply the bold style for the exit direction
+            spannableString.setSpan(StyleSpan(Typeface.BOLD), startIndexDirection, endIndexDirection, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+            exitText.text = spannableString
             holder.exitsContainer.addView(exitView)
         }
 
