@@ -1,15 +1,12 @@
 package com.example.mtrtransitlink
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
 import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.Arrays
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,7 +56,6 @@ class MainActivity : AppCompatActivity() {
                 val direction = exitsObject.getString(exitName)
                 exits.add(ExitData(exitName, direction))
             }
-            Log.e("exits", routeName)
             stationRoutes.add(StationRoute(routeName, exits))
         }
 
