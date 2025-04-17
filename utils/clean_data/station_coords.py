@@ -1,11 +1,13 @@
 import os, re
 import json
 from constants.ocr_conversion import LINE_CONVERSION, STATION_CONVERSION, END_CONVERSION
+from constants.directory_names import DIRECTORY_NAMES
 
 def clean_station_lines_data():
-    os.makedirs('station_data_json', exist_ok=True)
-    for file in os.listdir('stationdata'):
-        with open('stationdata/'+file, 'r', encoding='utf-8') as f:
+    os.makedirs(DIRECTORY_NAMES["TRAIN_LINES_JSON"], exist_ok=True)
+    
+    for file in os.listdir(DIRECTORY_NAMES["TRAIN_LINES_TXT"]):
+        with open(f"{DIRECTORY_NAMES["TRAIN_LINES_TXT"]}\\{file}", 'r', encoding='utf-8') as f:
             data = f.read()
             converted = ''
             for file_line in data.split('\n'):
@@ -55,11 +57,6 @@ def clean_station_lines_data():
                         final_output[key] = [coord.split(',')[0], coord.split(',')[1]]
 
 
-            with open('station_data_json/'+file.replace('.txt', '.json'), 'w', encoding='utf-8') as f2:
+            with open(DIRECTORY_NAMES["TRAIN_LINES_JSON"] + file.replace('.txt', '.json'), 'w', encoding='utf-8') as f2:
                 json.dump(final_output, f2, ensure_ascii=False, indent=4)
             
-    # remove all txt files
-    for file in os.listdir('stationdata'):
-        os.remove('stationdata/'+file)
-    # remove directory
-    os.rmdir('stationdata')

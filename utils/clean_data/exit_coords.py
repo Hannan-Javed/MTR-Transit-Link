@@ -1,4 +1,5 @@
 import os, re, json
+from constants.directory_names import DIRECTORY_NAMES
 
 def convert_to_old(exits, old_dpi=250, new_dpi=1000):
     for key in exits:
@@ -72,11 +73,11 @@ def clean_exits_data(exits):
 
 def save_exits_data(stations_exits):
     
-    os.makedirs('exits_data_json', exist_ok=True)
+    os.makedirs(DIRECTORY_NAMES["EXITS_JSON"], exist_ok=True)
     for station, exits in stations_exits.items():
         new_exits = clean_exits_data(exits)
         new_exits = convert_to_old(new_exits, old_dpi = 250, new_dpi = 1000)
-        with open('exits_data_json/'+station+'.json', 'w', encoding='utf-8') as f:
+        with open(f'{DIRECTORY_NAMES["EXITS_JSON"]}\\{station}.json', 'w', encoding='utf-8') as f:
             json.dump(new_exits, f, ensure_ascii=False, indent=4)
         
         if exits != new_exits:

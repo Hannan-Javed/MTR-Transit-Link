@@ -2,7 +2,8 @@ import os
 from PIL import Image, ImageOps, ImageEnhance
 import pytesseract
 from constants.rgb_definitions import OUTER_RGB, INNER_RGB
-from utils.exit_coords import save_exits_data
+from utils.clean_data.exit_coords import save_exits_data
+from constants.directory_names import DIRECTORY_NAMES
 
 def find_exit_coordinates(image):
     height = len(image)
@@ -96,15 +97,15 @@ def extract_text_from_exit(image, coordinates):
       
 
 # main function to extract exits
-def extract_exits():
+def OCR():
     # Tesseract OCR path setup
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     
     exits_data = dict()
-    for image_path in os.listdir('stations_png'):
+    for image_path in os.listdir(DIRECTORY_NAMES["STATION_PNGs_1000"]):
         print("Getting exit coordinates for station:", image_path + "...")
         # Load image
-        image_path = os.path.join('stations_png', image_path)
+        image_path = os.path.join(DIRECTORY_NAMES["STATION_PNGs_1000"], image_path)
         image = Image.open(image_path)
         image = image.convert('RGB')
         

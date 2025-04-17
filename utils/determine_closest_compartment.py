@@ -1,8 +1,9 @@
 import os
 import json
 from pathlib import Path
+from constants.directory_names import DIRECTORY_NAMES
 
-def process_exit_and_station_data(exits_folder, stations_folder, output_folder):
+def process_exit_and_station_data():
     """
     Processes exit and station data to determine the closest compartment (front, middle, or back)
     for each exit in the corresponding station files. The results are saved as separate files
@@ -15,7 +16,7 @@ def process_exit_and_station_data(exits_folder, stations_folder, output_folder):
     """
 
     # Ensure the output folder exists
-    Path(output_folder).mkdir(parents=True, exist_ok=True)
+    Path(DIRECTORY_NAMES["OUTPUT_FOLDER"]).mkdir(parents=True, exist_ok=True)
 
     # Function to determine the closest train compartment for an exit
     def get_closest_compartment(exit_x, compartments):
@@ -36,10 +37,10 @@ def process_exit_and_station_data(exits_folder, stations_folder, output_folder):
             return "Back"
 
     # Process each file in the exits folder
-    for exit_file_name in os.listdir(exits_folder):
+    for exit_file_name in os.listdir(DIRECTORY_NAMES["EXITS_JSON"]):
         if exit_file_name.endswith(".json"):
-            exit_file_path = os.path.join(exits_folder, exit_file_name)
-            station_file_path = os.path.join(stations_folder, exit_file_name)
+            exit_file_path = os.path.join(DIRECTORY_NAMES["EXITS_JSON"], exit_file_name)
+            station_file_path = os.path.join(DIRECTORY_NAMES["TRAIN_LINES_JSON"], exit_file_name)
             
             # Skip if the corresponding station file does not exist
             if not os.path.exists(station_file_path):
@@ -68,7 +69,7 @@ def process_exit_and_station_data(exits_folder, stations_folder, output_folder):
             # Sort the results by keys before writing
             results = dict(sorted(results.items()))
             # Write the results to a separate file in the output folder
-            output_file_path = os.path.join(output_folder, exit_file_name)
+            output_file_path = os.path.join(DIRECTORY_NAMES["OUTPUT_FOLDER"], exit_file_name)
             with open(output_file_path, "w") as output_file:
                 json.dump(results, output_file, indent=4)
 

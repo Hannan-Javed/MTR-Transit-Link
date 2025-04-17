@@ -1,11 +1,13 @@
 import requests, os
 from bs4 import BeautifulSoup
+from constants.directory_names import DIRECTORY_NAMES
 
 def downloadStationLayouts():
 
 	# make directory if already not present
-	if not os.path.exists(os.getcwd() + "\\stations"):
-		os.makedirs(os.getcwd() + "\\stations")
+	directory = f"{os.getcwd()}\\{DIRECTORY_NAMES["STATION_PDFs"]}"
+	if not os.path.exists(directory):
+		os.makedirs(directory)
 
 	# URL from which pdfs to be downloaded
 	url = "https://www.mtr.com.hk/en/customer/services/system_map.html"
@@ -38,7 +40,7 @@ def downloadStationLayouts():
 			response = requests.get("https://www.mtr.com.hk"+link.get('href'))
 			
 			# Write content in pdf file
-			with open("stations/"+str(names[i-1])[4:-5]+".pdf",'wb') as f:
+			with open(f"{DIRECTORY_NAMES["STATION_PDFs"]}\\{str(names[i-1])[4:-5]}.pdf",'wb') as f:
 				f.write(response.content)
 
 	print("All PDF files downloaded")

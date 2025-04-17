@@ -1,8 +1,8 @@
-from math import sqrt
 import os
 import json
 from PIL import Image
 from constants.rgb_definitions import ARROW_RGB
+from constants.directory_names import DIRECTORY_NAMES
 
 # Constants for bounding box adjustments
 BOX_HEIGHT_UP = 75
@@ -100,13 +100,14 @@ def look_for_train(image, text_coords):
     
     return train_coords
 
-def determine_direction():
-    for station in os.listdir('station_data_json'):
-        station_path = os.path.join('station_data_json', station)
+def OCR():
+    for station in os.listdir(DIRECTORY_NAMES["TRAIN_LINES_JSON"]):
+        station_path = os.path.join(DIRECTORY_NAMES["TRAIN_LINES_JSON"], station)
+
         with open(station_path, 'r') as file:
             data = json.load(file)
 
-        image_path = f"stations_png/{station.replace('.json', '.png')}"  # Assuming corresponding image files are in station_images
+        image_path = f"{DIRECTORY_NAMES["STATION_PNGs_250"]}\\{station.replace('.json', '.png')}"  # Assuming corresponding image files are in station_images
         if not os.path.exists(image_path):
             continue
 
